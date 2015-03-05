@@ -26,17 +26,19 @@
     
 
 
-{% if places_lived is not empty %}
+
     return 
     <ul>
+
         <li>{{places.getCity}}</li>
         <li>{{places.getState}}</li>
         <li>{{places.getYears}}</li>
     </ul>
     <a href='/'>Go home</a>;
-{% endif %}    
+ 
 
-"<p> Your list of places is empty</p>" . "<a href='/'>Go home</a>"
+<p> Your list of places is empty</p>
+<a href='/'>Go home</a>
 
 
 
