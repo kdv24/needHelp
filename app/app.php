@@ -16,14 +16,14 @@ $app->get("/", function() use ($app){
     return $app['twig']->render('/input_form.twig', array('places_info'=>Places::getAllPlaces()));  
 });
 
-$app->post("/places_list.twig", function() use($app){
+$app->post("/places_list", function() use($app){
     $places_lived = new Places($_POST['city'], $_POST['state'],$_POST['years']);
     $places_lived->save();
     return $app['twig']->render('places_list.twig', array('new_location'=> $places_lived));
 
 });
 
-$app->post("/delete.twig", function(){
+$app->post("/delete", function(){
     Places::deleteAll();
     return $app['twig']->render('/delete.twig');
 

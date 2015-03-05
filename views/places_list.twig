@@ -5,6 +5,8 @@
 </head>
 <body>
     <div class='container'>
+            <div>
+
                 <label for='city'>Enter the city</label>
                 <input id='city' name='city' class='form-control' type='text'>
             </div>
@@ -17,9 +19,22 @@
                 <input id='years' name='years' class='form-control' type='text'>
             </div>
             <button type= 'submit'>Clear all</button>
+
     </div>
 </body>
 </html>
+    
+
+
+{% if places_lived is not empty %}
+    return 
+    <ul>
+        <li>{{places.getCity}}</li>
+        <li>{{places.getState}}</li>
+        <li>{{places.getYears}}</li>
+    </ul>
+    <a href='/'>Go home</a>;
+{% endif %}    
 
 "<p> Your list of places is empty</p>" . "<a href='/'>Go home</a>"
 
@@ -41,5 +56,5 @@ if (
 
         $places = new Places($_POST['city'], $_POST['state'], $_POST['years']);
         $places->save();
-        return "<ul><li>" . $places->getCity() . "</li><li>" . $places->getState() . "</li><li>" .    $places->getYears() . "</li></ul>" . "<a href='/'>Go home</a>";
+        return "
     }
